@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.mapper.chatMapper">
+
+	<insert id="submit" parameterType="ChatVO">
+		insert into Chat (fromID,
+		toID, chatContent, chatTime, chatRead)
+		values (#{fromID}, #{toID},
+		#{chatContent}, NOW(), 0)
+	</insert>
+
+	<select id="listByID" parameterType="ChatVO" resultType="ChatVO">
+		SELECT * FROM Chat
+		WHERE ((fromID =#{fromID} AND toID =#{toID})
+		OR (fromID =#{toID} AND toID =#{fromID}))
+		AND chatID > #{chatID}
+		ORDER BY chatID
+
+	</select>
+
+	<select id="listByRecent" parameterType="ChatVO" resultType="ChatVO">
+		SELECT * FROM Chat
+		WHERE ((fromID = #{fromID} and toID = #{toID})
+		OR (fromID = #{toID} AND toID = #{fromID}))
+		AND chatID > (SELECT MAX(chatID) - 100 FROM Chat)
+		ORDER BY chatTime
+	</select>
+
+	<update id="readChat" parameterType="ChatVO">
+		UPDATE Chat
+		SET chatRead = 1
+		WHERE (fromID =#{toID} AND toID =#{fromID})
+		AND chatID &lt;= ${chatID}
+	</update>
+
+	<select id="newChat" parameterType="ChatVO" resultType="int">
+		SELECT * FROM Chat
+		WHERE (fromID = #{userID})
+		AND chatRead = 0
+	</select>
+
+	<select id="getFollowerList" parameterType="String" resultType="ChatVO">
+		(select * from(select * from Chat where toID = #{vale} order by chatTime desc)as b group by fromID)
+		UNION ALL
+		(select * from(select * from Chat where fromID = #{value} order by chatTime desc)as a group by toID)
+	</select>
+
+	<select id="getUser" parameterType="String"
+		resultType="com.project.sns.user.vo.UserVO">
+		SELECT * FROM SnsUser WHERE id = #{value}
+	</select>
+</mapper>

@@ -1,0 +1,72 @@
+
+{"data":{
+	"response":{
+		"header":{
+			"resultCode":"0000",
+			"resultMsg":"OK"
+		},
+		"body":{
+			"items":{
+				"item":[
+						{
+						"addr1":"서울특별시 용산구 남산공원길 105",
+						"addr2":"(용산동2가)","areacode":1,"cat1":"A02","cat2":"A0207","cat3":"A02070200","contentid":2521880,"contenttypeid":15,"createdtime":20171212165723,"eventenddate":20171216,"eventstartdate":20171216,"firstimage":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/70\/2521870_image2_1.png","firstimage2":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/70\/2521870_image2_1.png","mapx":126.9878594933,"mapy":37.5511312042,"mlevel":6,"modifiedtime":20171213114311,"readcount":414,"sigungucode":21,"tel":"070-4808-3640","title":"고려인삼윈터페스티벌 '기쁘다 삼타 오셨네' 2017"},{"addr1":"서울특별시 강남구 테헤란로7길 32","addr2":"(역삼동)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02081300","contentid":2041496,"contenttypeid":15,"createdtime":20151116161708,"eventenddate":20171231,"eventstartdate":20170615,"firstimage":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/01\/2041501_image2_1.jpg","firstimage2":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/01\/2041501_image2_1.jpg","mapx":127.0302792433,"mapy":37.5019710091,"mlevel":6,"modifiedtime":20170726143753,"readcount":21002,"sigungucode":1,"tel":"02-6674-4302","title":"국기원 태권도 시범단 상설공연: 'Great Taekwondo - 달의 무사'"},{"addr1":"서울특별시 종로구 삼청로 37","addr2":"(세종로)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02080100","contentid":140660,"contenttypeid":15,"createdtime":20040311000000,"eventenddate":20181231,"eventstartdate":20150101,"mapx":126.9788705506,"mapy":37.5819663482,"modifiedtime":20171101145953,"readcount":21265,"sigungucode":23,"tel":"02-3704-3114","title":"국립민속박물관 우리민속한마당"},{"addr1":"서울특별시 송파구 올림픽로 300","addr2":"(신천동)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02080900","contentid":2492033,"contenttypeid":15,"createdtime":20170508131546,"eventenddate":20171201,"eventstartdate":20171130,"firstimage":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/28\/2513728_image2_1.jpg","firstimage2":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/28\/2513728_image2_1.jpg","mapx":127.1042832896,"mapy":37.5136209882,"mlevel":6,"modifiedtime":20171031152628,"readcount":2893,"sigungucode":18,"tel":"1588-1210","title":"김선욱의 브람스 피아노 협주곡 제2번 1,2"},{"addr1":"서울특별시 종로구 동숭길 50","addr2":"(동숭동)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02080200","contentid":1922774,"contenttypeid":15,"createdtime":20140530163529,"eventenddate":20181231,"eventstartdate":20140422,"firstimage":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/49\/2483949_image2_1.JPG","firstimage2":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/49\/2483949_image2_1.JPG","mapx":127.0045376955,"mapy":37.5805391974,"mlevel":6,"modifiedtime":20180102132524,"readcount":6863,"sigungucode":23,"tel":"02-764-0686","title":"꽃보다 슈퍼스타"},{"addr1":"서울특별시 마포구 상암산로 76","addr2":"(상암동)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02081300","contentid":2433663,"contenttypeid":15,"createdtime":20161010095013,"eventenddate":20171203,"eventstartdate":20170826,"mapx":"126.8923007450","mapy":37.5791790107,"modifiedtime":20170823154204,"readcount":6067,"sigungucode":13,"tel":"02-498-7778","title":"꿈다락 토요문화학교 주말문화여행 2017"},{"addr1":"서울특별시 마포구 양화로16길 29","addr2":"(서교동)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02080300","contentid":1305978,"contenttypeid":15,"createdtime":20110613175633,"eventenddate":20181231,"eventstartdate":20170101,"mapx":126.9212766131,"mapy":37.5532325451,"mlevel":6,"modifiedtime":20180102141713,"readcount":40180,"sigungucode":13,"tel":"02-739-8288","title":"난타 (홍대)"},{"addr1":"서울특별시 중구 명동길 26","addr2":"(명동2가)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02080300","contentid":406745,"contenttypeid":15,"createdtime":20080118180330,"eventenddate":20181231,"eventstartdate":20160101,"firstimage":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/86\/2034286_image2_1.jpg","firstimage2":"http:\/\/tong.visitkorea.or.kr\/cms\/resource\/86\/2034286_image3_1.jpg","mapx":126.9837456304,"mapy":"37.5634463660","mlevel":6,"modifiedtime":20180102141455,"readcount":43408,"sigungucode":24,"tel":"02-739-8288","title":"난타 (명동)"},{"addr1":"서울특별시 종로구 대학로12길 64","addr2":"(동숭동)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02080200","contentid":1204763,"contenttypeid":15,"createdtime":20110215141024,"eventenddate":20180225,"eventstartdate":20171110,"mapx":127.0036933107,"mapy":37.5811613326,"mlevel":6,"modifiedtime":20180102130932,"readcount":32610,"sigungucode":23,"tel":"02-3672-0900","title":"늘근도둑 이야기"},{"addr1":"서울특별시 종로구 창경궁로 254","addr2":"(명륜2가)","areacode":1,"cat1":"A02","cat2":"A0208","cat3":"A02080300","contentid":1938806,"contenttypeid":15,"createdtime":20140804102326,"eventenddate":20181231,"eventstartdate":20140801,"mapx":126.9999630221,"mapy":37.5837304115,"mlevel":6,"modifiedtime":20171031094727,"readcount":3751,"sigungucode":23,"tel":"02-2231-1433","title":"달을 품은 슈퍼맨"}]},"numOfRows":10,"pageNo":1,"totalCount":51}}} 
+						
+						
+						
+												{
+							"result":
+							{
+								"header":
+								{
+									"columns":[
+									{
+										"rowNum":"번호",
+										"bplcNm":"사업장명",
+										"siteWhlAddr":"소재지전체주소",
+										"rdnWhlAddr":"도로명전체주소",
+										"apvPermYmd":"인허가일자",
+										"trdStateNm":"영업상태명",
+										"dcbYmd":"폐업일자",
+										"clgStdt":"휴업시작일자",
+										"clgEnddt":"휴업종료일자",
+										"ropnYmd":"재개업일자",
+										"siteArea":"소재지면적",
+										"sitePostNo":"소재지우편번호",
+										"bdngOwnSeNm":"건물소유구분명",
+										"wtrSplyFacilSeNm":"급수시설구분명",
+										"yy":"년도",
+										"multUsnUpsoYn":"다중이용업소여부",
+										"facilTotScp":"시설총규모",
+										"sntCobNm":"위생업종명",
+										"sntUptaeNm":"위생업태명",
+										"totEpNum":"총종업원수",
+										"siteTel":"전화번호",
+										"x":"위치정보(X)",
+										"y":"위치정보(Y)",
+										"mgtNo":"인허가번호",
+										"dtlStateNm":"상세영업상태명"
+										}
+									],
+							"paging":{"pageIndex":1,"totalCount":1313,"pageSize":10},"process":{"code":"00","message":"정상 처리되었습니다."}},
+					"body":{
+						"rows":
+						[
+							{
+								"row":[
+										{
+											"rowNum":1,
+											"bplcNm":"유리성휴게점",
+											"siteWhlAddr":"제주특별자치도 서귀포시 색달동 2950-23번지 ",
+											"rdnWhlAddr":"",
+											"apvPermYmd":20150507,
+											"trdStateNm":"운영중",
+											"dcbYmd":"",
+											"clgStdt":"",
+											"clgEnddt":"",
+											"ropnYmd":"",
+											"siteArea":9.25,
+											"sitePostNo":697808,
+											"bdngOwnSeNm":"",
+											"wtrSplyFacilSeNm":"","yy":2015,"multUsnUpsoYn":"N","facilTotScp":9.25,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"145344.745089 ","y":"-27778.4278422 ","mgtNo":"6520000-104-2015-00034","dtlStateNm":"영업"},{"rowNum":2,"bplcNm":"천제 푸드트럭","siteWhlAddr":"제주특별자치도 서귀포시 중문동 2232번지 ","rdnWhlAddr":"제주특별자치도 서귀포시 천제연로 132 (중문동)","apvPermYmd":20150507,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":9.25,"sitePostNo":697858,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"","yy":2015,"multUsnUpsoYn":"N","facilTotScp":9.25,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"145800.31158200000 ","y":"-26575.72868090000 ","mgtNo":"6520000-104-2015-00035","dtlStateNm":"영업"},{"rowNum":3,"bplcNm":"중문푸드트럭","siteWhlAddr":"제주특별자치도 서귀포시 중문동 2232번지 ","rdnWhlAddr":"제주특별자치도 서귀포시 천제연로 132 (중문동)","apvPermYmd":20150521,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":9.25,"sitePostNo":697858,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"","yy":2015,"multUsnUpsoYn":"N","facilTotScp":9.25,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"145800.31158200000 ","y":"-26575.72868090000 ","mgtNo":"6520000-104-2015-00041","dtlStateNm":"영업"},{"rowNum":4,"bplcNm":"스트린런치푸드트럭","siteWhlAddr":"제주특별자치도 서귀포시 중문동 2503번지 ","rdnWhlAddr":"","apvPermYmd":20150609,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":8.89,"sitePostNo":697858,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"","yy":2015,"multUsnUpsoYn":"N","facilTotScp":8.89,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"146303.630261 ","y":"-27988.4057447 ","mgtNo":"6520000-104-2015-00047","dtlStateNm":"영업"},{"rowNum":5,"bplcNm":"팜랜드 푸드트럭","siteWhlAddr":"경기도 안성시 공도읍 신두리 451번지 ","rdnWhlAddr":"경기도 안성시 공도읍 대신두길 28","apvPermYmd":20150529,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":"1,760.00","sitePostNo":456824,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"상수도전용","yy":2015,"multUsnUpsoYn":"N","facilTotScp":1760,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"03180537952","x":"217182 ","y":"387539 ","mgtNo":"4080000-104-2015-00029","dtlStateNm":"영업"},{"rowNum":6,"bplcNm":"나사트레일러커피","siteWhlAddr":"경기도 화성시 봉담읍 하가등리 107-1번지 화성그린환경센터 주민편익시설 내 ","rdnWhlAddr":"경기도 화성시 봉담읍 하가등안길 100 (화성그린환경센터 주민편익시설 내)","apvPermYmd":20151022,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":"15.00","sitePostNo":445903,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"","yy":2015,"multUsnUpsoYn":"N","facilTotScp":15,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"194467.07060900000 ","y":"405790.78155500000 ","mgtNo":"5530000-104-2015-00227","dtlStateNm":"영업"},{"rowNum":7,"bplcNm":"시현이네(푸드트럭)","siteWhlAddr":"경기도 남양주시 이패동 산 87번지 남양주종합운동장내푸드트럭\/실내체육관 정문광장 오른쪽 ","rdnWhlAddr":"경기도 남양주시 강변북로 842 (이패동, 남양주종합운동장내푸드트럭\/실내체육관 정문광장 오른쪽)","apvPermYmd":20151029,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":"10.00","sitePostNo":472926,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"상수도전용","yy":2015,"multUsnUpsoYn":"N","facilTotScp":10,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"215367 ","y":"455869 ","mgtNo":"3990000-104-2015-00191","dtlStateNm":"영업"},{"rowNum":8,"bplcNm":"푸드트럭(악양둑방)","siteWhlAddr":"경상남도 함안군 법수면 윤외리 104-2번지 악양 둑방 내 ","rdnWhlAddr":"경상남도 함안군 법수면 악양길 39","apvPermYmd":20151029,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":"10.00","sitePostNo":637833,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"","yy":2015,"multUsnUpsoYn":"N","facilTotScp":10,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"326130.34332500000 ","y":"204576.34623100000 ","mgtNo":"5400000-104-2015-00023","dtlStateNm":"영업"},{"rowNum":9,"bplcNm":"부여커피푸드트럭","siteWhlAddr":"충청남도 부여군 규암면 반산리 172번지 ","rdnWhlAddr":"충청남도 부여군 규암면 백제문로 387","apvPermYmd":20151029,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":"10.00","sitePostNo":323813,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"","yy":2015,"multUsnUpsoYn":"N","facilTotScp":10,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"191194.64857200000 ","y":"312134.29476400000 ","mgtNo":"4570000-104-2015-00025","dtlStateNm":"영업"},{"rowNum":10,"bplcNm":"어바웃커피","siteWhlAddr":"대전광역시 유성구 봉명동 700번지 갑천변 ","rdnWhlAddr":"","apvPermYmd":20160510,"trdStateNm":"운영중","dcbYmd":"","clgStdt":"","clgEnddt":"","ropnYmd":"","siteArea":4.16,"sitePostNo":305301,"bdngOwnSeNm":"","wtrSplyFacilSeNm":"상수도전용","yy":2016,"multUsnUpsoYn":"N","facilTotScp":4.16,"sntCobNm":"휴게음식점","sntUptaeNm":"푸드트럭","totEpNum":"","siteTel":"","x":"231393.808699 ","y":"317153.122152 ","mgtNo":"3670000-104-2016-00060","dtlStateNm":"영업"}]}]}}} 
+						

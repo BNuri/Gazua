@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.rog//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- TourMap Data -->
+<mapper namespace="com.project.sns.mapper.addrMapper">
+	<insert id="inputAddr" parameterType="java.util.List">
+		insert into TourMap(contentTypeId, contentId, title, tel, addr1,
+		firstimage, firstimage2, cat2, cat3, mapx, mapy)
+		values
+		<foreach collection="list" item="item" separator=",">
+			(#{item.contentTypeId}, #{item.contentId}, #{item.title,
+			jdbcType=VARCHAR},
+			#{item.tel, jdbcType=VARCHAR}, #{item.addr1, jdbcType=VARCHAR},
+			#{item.firstimage, jdbcType=VARCHAR}, #{item.firstimage2,
+			jdbcType=VARCHAR},
+			#{item.cat2, jdbcType=VARCHAR}, #{item.cat3, jdbcType=VARCHAR},
+			#{item.mapx, jdbcType=VARCHAR}, #{item.mapy, jdbcType=VARCHAR})
+		</foreach>
+	</insert>
+
+<!--  TourMapCat Data -->
+	<insert id="inputAddrCat" parameterType="java.util.List">
+		insert into TourMapCat(contentId, areacode, sigungucode)
+		values
+		<foreach collection="list" item="item" separator=",">
+			(#{item.contentId}, #{item.areacode, jdbcType=VARCHAR},
+			#{item.sigungucode, jdbcType=VARCHAR})
+		</foreach>
+	</insert>
+
+<!--MAP -->
+	<select id="getAddress" parameterType="int" resultType="AddrVO">
+		select * from TourMap
+	</select>
+
+	<select id="getAddrByWeather" resultType="AddrVO">
+		select * from TourMap m, TourMapCat c
+		<where>m.contentId = c.contentId and sigungucode = #{sigungucode} and
+			contentTypeId != 32 and inside = #{inside} </where>
+	</select>
+
+	<select id="getAddrWithCode" resultType="AddrVO">
+		select * from TourMap m, TourMapCat c
+		<where>m.contentId = c.contentId and sigungucode = #{sigungucode} and
+			contentTypeId != 32</where>
+	</select>
+
+	<select id="getHeart" resultMap="getHeartMap">
+		select contentId, sum(heart)
+		from Board group by contentId
+	</select>
+
+	<resultMap id="getHeartMap" type="BoardVO">
+		<result property="contentId" column="contentId" />
+		<result property="heart" column="sum(heart)" />
+	</resultMap>
+	
+	<select id="getStarAvg" parameterType="String" resultType="double">
+   	 	select COALESCE(AVG(star),0) from Board
+   	 	<where>
+   	 	contentId = #{value}
+   	 	</where>
+   	</select>
+   	
+   	<select id="getStarAvgList" resultMap="getStarMap">
+   	 	select contentId, AVG(star) from Board group by contentId
+   	</select>
+   	
+   	<resultMap id="getStarMap" type="BoardVO">
+		<result property="contentId" column="contentId" />
+		<result property="star" column="AVG(star)" />
+	</resultMap>	
+	
+<!-- SAVE PATH -->
+   <insert id="insertPath" parameterType="BoardVO">
+      insert into Path (id, contentId, story_seq) values
+      ( #{writer},#{contentId},#{story_seq} )
+   </insert>
+   
+   	<select id="getStoryseq" parameterType="int" resultType="int">
+		select max(story_seq) from Story 
+		<where> 
+			id = #{id}
+		</where>
+	</select>
+	
+<!-- Detail -->   	
+   	 <select id="callInfo" parameterType="String" resultType="AddrVO">
+   	 	select * from TourMap
+   	 	<where>
+   	 	contentId = #{value}
+   	 	</where>
+   	 </select>
+   	 
+   	 <select id="callReview" parameterType="String" resultType="AddrVO">
+   	 	select * from TourReview
+   	 	<where>
+   	 	contentId = #{value}
+   	 	</where>
+   	 </select>
+</mapper>

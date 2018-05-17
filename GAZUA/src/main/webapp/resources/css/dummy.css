@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.commentList {
+   width: 100%;
+}
+
+.commentList .commentWrap {
+   width: 100%;
+   float: left;
+   display: inline-table;
+}
+
+.commentArea {
+   
+    border-bottom: 1px solid darkgray;
+    width: 80%;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#pro {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 15px;
+}
+
+#pro:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}

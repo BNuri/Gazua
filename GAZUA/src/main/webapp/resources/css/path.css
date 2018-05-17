@@ -1,0 +1,38 @@
+@charset "UTF-8";
+.pin{
+   background:white;
+   overflow:hidden;
+   height: auto;
+   border: 1px solid black;
+   clear: left;
+   border-radius: 12px;
+   }
+   
+.p{
+    text-align:left;
+   }
+   
+.sideBtn{
+   background-color: #4CAF50;
+   color: white;
+   padding: 12px 30px;
+   font-size: 16px;
+   border-radius: 12px;
+   width: auto;
+   }
+   
+#searchBox{
+   position: absolute;
+   float: right;
+   background-color: #4CAF50;
+   height : 50px;
+   top: 70px;
+   right: 25%;
+   
+   }
+
+.glyphicon-remove{
+   float: right;
+   font-size: 20px;
+   right: 3%;
+   }

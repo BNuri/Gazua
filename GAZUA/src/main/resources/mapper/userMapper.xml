@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.rog//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+
+<mapper namespace="com.project.sns.mapper.userMapper">
+		
+		<select id="getUser1" parameterType="int" resultType="UserVO" >
+			select * 
+			from SnsUser
+			LIMIT #{index},2;
+		</select>
+		<select id="getUser" parameterType="string" resultType="UserVO">
+			select * from SnsUser
+			<where>
+				#{id} = id
+			</where>
+		</select>
+		
+		<insert id="insertUser" parameterType="UserVO">
+			insert into SnsUser(id, name, password, birthday, sex, email)
+			values(#{id}, #{name}, #{password}, #{birthday}, #{sex}, "bit@bit.com")
+		</insert>
+		
+		<select id="getAddress" parameterType="int" resultType="AddrVO">
+			select * from TourMap
+		</select>
+		
+		<select id="getId" parameterType="UserVO" resultType="UserVO">
+			select * from SnsUser
+			where id = #{id}
+		</select>
+		<select id="getUserImage" parameterType="string" resultType="string">
+			select profile_img from SnsUser
+			<where>
+				#{id} = id
+			</where>		
+		</select>
+		<select id="getFollowingCount" parameterType="string" resultType="int">
+			select count(*) from Follow
+			<where>
+				follower = #{id}
+			</where>
+		</select>
+		<select id="getFollowerCount" parameterType="string" resultType="int">
+			select count(*) from Follow
+			<where>
+				following = #{id}
+			</where>
+		</select>
+		<insert id="followByBoard" parameterType="map">
+			insert Follow(follower, following)
+			values(#{id}, #{writer}) 
+		</insert>
+		<insert id="unFollow" parameterType="map">
+			delete from Follow where follower = #{id} and following = #{writer}
+		</insert>
+		
+		<select id="getFollower" parameterType="string" resultType = "UserVO">
+			select * from SnsUser
+			<where>
+			id = any(select follower from Follow where #{value} = following)
+			or id = any(select following from Follow where #{value} = follower)
+			</where>
+		</select>
+		
+		<select id="getFollow" parameterType="map" resultType="int">
+			select count(*) from Follow
+			<where>
+				follower = #{id}
+				and
+				following = #{writer}
+			</where>
+		</select>
+		<update id="updatePicture" parameterType="UserVO">
+			update SnsUser set profile_img = #{profile_img}
+			<where>
+			id = #{id}
+			</where>
+		</update>
+		
+
+</mapper>

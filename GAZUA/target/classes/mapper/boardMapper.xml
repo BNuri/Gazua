@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.rog//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.sns.mapper.boardMapper">
+	<!--댓글 -->
+	<select id="replyCount" resultType="int">
+		select TABLE_ROWS from
+		information_schema.tables where table_name = 'Reply';
+	</select>
+	<select id="replyList" parameterType="ReplyVO" resultType="ReplyVO">
+		SELECT
+		*
+		FROM Reply
+		<where>
+			board_seq = #{board_seq} and story_seq = #{story_seq}
+		</where>
+	</select>
+
+	<insert id="insertReply" parameterType="ReplyVO">
+		INSERT INTO
+		Reply (story_seq, board_seq, rcontent, rwriter)
+		VALUES(#{story_seq},#{board_seq},#{rcontent},#{rwriter})
+	</insert>
+	<update id="replyUpdate" parameterType="ReplyVO">
+		UPDATE Reply
+		SET
+		rcontent = #{rcontent}
+		WHERE board_seq = #{board_seq}
+		AND story_seq = #{story_seq}
+		AND reply_seq = #{reply_seq}
+	</update>
+
+	<delete id="replyDelete" parameterType="ReplyVO">
+		DELETE FROM Reply
+		WHERE board_seq = #{board_seq}
+		AND story_seq = #{story_seq}
+		AND reply_seq = #{reply_seq}
+	</delete>
+	<!--댓글 -->
+	<!-- <select id="getBoardList" parameterType="map" resultType="BoardVO" 
+		> select * from Board b, TourMap t where b.story_seq = #{story_seq} and b.contentId 
+		= t.contentId LIMIT #{index},4; </select> -->
+
+	<select id="getBoardList" parameterType="map" resultType="BoardVO">
+		Select * From
+		Board b left JOIN TourMap t
+		ON b.contentId = t.contentId
+		left JOIN Story s
+		ON b.story_seq = s.story_seq
+		where b.story_seq = #{story_seq}
+		limit #{index},4;
+
+	</select>
+	<select id="getBoardStoryList" parameterType="BoardVO"
+		resultType="BoardVO">
+		select *
+		from Story s, Board b
+		where s.story_seq = b.story_seq
+		and b.writer = #{writer}
+		order by s.story_title;
+	</select>
+
+	<select id="getMainBoardList" parameterType="int" resultType="BoardVO">
+		select p.*
+		from
+		(
+		select *
+		from Board
+		order by heart desc
+		) p
+		group by story_seq
+		order by heart desc
+		LIMIT #{index},8;
+	</select>
+	<select id="getFollowerStoryList" parameterType="map"
+		resultType="BoardVO">
+		select p.* from
+		(
+		select * from Board where writer in
+		(select following from Follow
+		<where>
+			follower = #{id}
+		</where>
+		)
+		order by regdate desc
+		) p limit #{index}, #{index2};
+	</select>
+
+
+	<select id="getBoardCount" parameterType="int">
+		select count(*) from Board
+		<where>
+			line_seq = #{line_seq}
+		</where>
+	</select>
+
+	<select id="getBoardValue" resultType="BoardVO" parameterType="int">
+		select * from Board
+		<where>
+			board_seq = #{board_seq}
+			and
+			line_seq = #{line_seq}
+		</where>
+	</select>
+	<update id="upBoardHeart" parameterType="BoardVO">
+		update Board set heart = heart+1 and heart_id = heart_id
+		<where>
+			board_seq = #{board_seq}
+			and
+			line_seq = #{line_seq}
+		</where>
+	</update>
+
+
+	<select id="getBoardReply" parameterType="int" resultType="ReplyVO">
+		select rcontent,rwriter
+		from Reply
+		where board_seq = #{board_seq}
+		order by reply_seq
+	</select>
+
+	<!-- <insert id="insertReply" parameterType="ReplyVO"> insert into Reply 
+		(board_seq, seq, writer, content) values ( #{contentId},(select * from (select 
+		max(Reply_seq)+1 from tbl_board), #{writer},#{content} ) </insert> -->
+
+
+	<insert id="inputBoard" parameterType="BoardVO">
+		insert into Board(story_seq, title, content, writer, contentId, heart, star)
+		values (#{story_seq}, #{title}, #{content}, #{writer}, #{contentId}, 0
+		, #{star})
+	</insert>
+	<update id="updateBoard" parameterType="BoardVO">
+		update Board set title = #{title}, content = #{content}, contentId =
+		#{contentId}, star = #{star}
+		<where>
+			board_seq = ${board_seq}
+		</where>
+	</update>
+	<select id="getBoardSeq" parameterType="BoardVO" resultType="int">
+		select count(*) from Board
+		<where>
+			board_seq = #{board_seq}
+		</where>
+	</select>
+	<delete id="deleteBoard" parameterType="BoardVO">
+		delete from Board
+		<where>
+			board_seq = #{board_seq}
+		</where>
+	</delete>
+	<delete id="deleteBoardByStory" parameterType="StoryVO">
+		delete from Board
+		<where>
+			story_seq = #{story_seq}
+			and
+			writer = #{id}
+		</where>
+	</delete>
+
+
+	<!-- IMAGE -->
+	<insert id="addImg" parameterType="String">
+		insert into Table_img (fullName, board_seq) values (#{fullName},
+		LAST_INSERT_ID())
+	</insert>
+
+	<select id="getImg" parameterType="int"
+		resultType="com.project.sns.board.vo.ImageVO">
+		select * from Table_img
+		<where>
+			board_seq = #{board_seq} order by regdate
+		</where>
+	</select>
+	<insert id="saveImage" parameterType="com.project.sns.board.vo.ImageVO"
+		useGeneratedKeys="true" keyProperty="img_seq">
+		insert into Image_upload (board_seq, img_name, image) VALUES(#{board_seq},
+		#{img_name}, #{image})
+	</insert>
+
+	<!-- STORY -->
+	<select id="getStory" parameterType="String"
+		resultType="com.project.sns.board.vo.StoryVO">
+		select story_seq, story_title from Story
+		<where>
+			id = #{value} order by story_regdate
+		</where>
+	</select>
+
+	<insert id="inputStory" parameterType="StoryVO"
+		useGeneratedKeys="true" keyProperty="story_seq">
+		insert into Story (story_title, id) values(#{story_title}, #{id})
+	</insert>
+	<delete id="deleteStory" parameterType="StoryVO">
+		delete from Story
+		<where>
+			story_seq = #{story_seq} and
+			id = #{id}
+		</where>
+	</delete>
+
+	<select id="getStoryCount" parameterType="string" resultType="int">
+		select count(*) from Story
+		<where>
+			id = #{id}
+		</where>
+	</select>
+	<select id="getImage" parameterType="int"
+		resultType="com.project.sns.board.vo.ImageVO">
+		select * from Image_upload
+		<where>
+			img_seq = ${value}
+		</where>
+	</select>
+	<select id="getStoryAll" parameterType="string" resultType="StoryVO">
+		select * from Story
+		<where>
+			id = #{id}
+		</where>
+	</select>
+
+	<!-- Like -->
+	<insert id="likeInsert" parameterType="BoardVO">
+		insert into heartList (story_seq, hboard_seq, heartId)
+		VALUES(#{story_seq}, #{board_seq}, #{heart_id})
+	</insert>
+	<!--같이사용 -->
+	<update id="likeUp" parameterType="BoardVO">
+		UPDATE Board SET heart = #{heart}
+		where
+		board_seq = #{board_seq}
+		and story_seq = #{story_seq}
+	</update>
+
+	<!--같이사용 -->
+	<delete id="likeDelete" parameterType="BoardVO">
+		delete from heartList
+		<where>
+			story_seq = #{story_seq}
+			and hboard_seq = #{board_seq}
+			and heartId = #{heart_id}
+		</where>
+	</delete>
+
+
+	<select id="getBoardlikeId" parameterType="BoardVO" resultType="BoardVO">
+		select likeId1 from Board
+		where board_seq = #{board_seq}
+		and story_seq = #{story_seq}
+	</select>
+
+	<select id="getHeart" parameterType="map" resultType="int">
+		select count(*) from heartList
+		<where>
+			story_seq = #{story_seq}
+			and hboard_seq = #{hboard_seq}
+			and heartId = #{heartId}
+		</where>
+	</select>
+
+	<select id="getHeartCount" parameterType="map" resultType="int">
+		select heart from Board
+		<where>
+			board_seq = #{board_seq}
+			and story_seq = #{story_seq}
+		</where>
+	</select>
+
+	<select id="getBoardBySeq" parameterType="String" resultType="BoardVO">
+		select * from Board
+		<where>
+			board_seq = #{board_seq}
+		</where>
+	</select>
+	<select id="getSavedPath" parameterType="BoardVO" resultType="AddrVO">
+		select t.title, t.contentId, t.contentTypeId, mapy, mapx
+		from TourMap t, (select contentId from Path
+		<where> story_seq = #{story_seq} </where>
+		) p
+		where t.contentId = p.contentId
+	</select>
+</mapper>

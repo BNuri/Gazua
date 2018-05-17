@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<!-- 게시판 VO -->
+		<typeAlias type="com.project.sns.board.vo.BoardVO" alias="BoardVO"/>
+		<!-- 댓글 VO -->
+		<typeAlias type="com.project.sns.board.vo.ReplyVO" alias="ReplyVO"/>
+		<!-- 스토리 VO -->
+		<typeAlias type="com.project.sns.board.vo.StoryVO" alias="StoryVO"/>
+		<!-- 주소 VO -->
+		<typeAlias type="com.project.sns.addr.vo.AddrVO" alias="AddrVO"/>
+		<!-- 사용자 VO -->
+		<typeAlias type="com.project.sns.user.vo.UserVO" alias="UserVO"/>
+		<!-- 채팅 VO -->
+		<typeAlias type="com.project.sns.chat.vo.ChatVO" alias="ChatVO"/>
+		<!-- TourReviewVO -->
+		<typeAlias type="com.project.sns.tour.vo.TourReviewVO" alias="TourReviewVO"/>
+		<typeAlias type="com.project.sns.tour.vo.TourMapVO" alias="TourMapVO"/>
+		<!-- 검색에 필요한 VO -->
+		<typeAlias type="com.project.sns.search.vo.SearchVO" alias="SearchVO"/>
+	</typeAliases>
+</configuration>

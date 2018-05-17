@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.rog//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+
+<mapper namespace="com.project.sns.mapper.tourMapper">
+		<!-- TourReviews -->
+		<insert id="inputTourReview" parameterType="TourReviewVO">
+			insert into TourReview(contentId, scope, link1, link2, link3,
+			image1, image2, image3)
+			values(#{contentId}, #{scope}, #{link1}, #{link2}, #{link3},
+			#{image1}, #{image2}, #{image3})
+		</insert>		
+	
+		<select id="selectTourReviewAll">
+			select * from TourReview
+		</select>
+
+		<select id="selectTourReview" parameterType="string">
+			select * from TourReview
+			<where>
+				contentId = #{contentId}
+			</where>
+		</select>
+		
+		<update id="updateTourReview" parameterType="TourReviewVO">
+			update TourReview set 
+			scope = #{scope} and
+			link1 = #{link1} and
+			link2 = #{link2} and
+			link3 = #{link3} and
+			image1 = #{image1} and
+			image2 = #{image2} and
+			image3 = #{image3}
+			<where>
+				contentId = #{contentId}
+			</where>
+		</update>
+
+		<delete id="deleteTourReview" parameterType="string">
+			delete from TourReview
+			<where>
+				contentId = #{contentId}
+			</where>
+		</delete>
+		
+		
+		
+		
+
+</mapper>
