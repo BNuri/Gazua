@@ -540,20 +540,15 @@ public class AddrController {
              System.out.println();
           }               
           getP.getShortestPath(1, 1, W);
-          System.out.println("getShortestPath�쓽 諛붾줈 �떎�쓬 以� �떎�뻾");
-          
-           int delayTime = 2000;
-           long saveTime = System.currentTimeMillis();
-           long currTime = 0;
-           while(currTime - saveTime < delayTime) {
-              currTime = System.currentTimeMillis();
-           }System.out.println("�떆媛�2珥� 寃쎄낵");
+//           int delayTime = 2000;
+//           long saveTime = System.currentTimeMillis();
+//           long currTime = 0;
+//           while(currTime - saveTime < delayTime) {
+//              currTime = System.currentTimeMillis();
+//           }
            
           List<Integer> path = getP.getPath();
-           System.out.println("getShortestPath�걹�굹怨� path : " + path.toString());
-
           Collections.reverse(path);
-          System.out.println("path�쓽 湲몄씠 : " + path.size());
           
           int longest = 0;
           int star = 0;         
@@ -813,7 +808,6 @@ class getP{
 	      }
 
 	      
-	      // 2李⑥썝 諛곗뿴�쓽 紐⑤뱺 �썝�냼瑜� -1濡�
 	      for (int i = 1; i <= N; i++) {
 	         Arrays.fill(dp[i], -1);
 	      }
@@ -822,7 +816,6 @@ class getP{
 	            for(int j = 0; j < N; j++) {
 	               if(i==j)continue;
 	               
-	               //異붽��뀘!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!�쓬�떇�젏 �궗�씠�뿉 5km 異붽�.
 	               if(paramData.get(i).getContentTypeId().equals("39") && paramData.get(j).getContentTypeId().equals("39")) {
 	                  distanceMeter = distance2(Double.parseDouble(paramData.get(i).getMapy()), Double.parseDouble(paramData.get(i).getMapx()), Double.parseDouble(paramData.get(j).getMapy()), Double.parseDouble(paramData.get(j).getMapx()), "meter");
 	                  distanceMeter += 5000;
@@ -832,7 +825,8 @@ class getP{
 	               W[i+1][j+1] = (int) Math.floor(distanceMeter);                       
 	            }   
 	         }
-	       return W;
+	        int[][] W2 = W;
+	       return W2;
 	    }   
 	   
 	   public static int getShortestPath(int current, int visited, int[][] W) {
